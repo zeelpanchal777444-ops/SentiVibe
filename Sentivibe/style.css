@@ -1,0 +1,149 @@
+/* 🌙 Full App Background */
+[data-testid="stAppViewContainer"] {
+    background-color: #000000; /* Pure dark */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e6e6e6;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hide Streamlit default white area flashes */
+[data-testid="stDecoration"] { display: none; }
+
+/* Transparent Header + Sidebar */
+[data-testid="stHeader"], [data-testid="stSidebar"] {
+    background: rgba(47, 47, 47, 0.85) !important;
+    color: #00ffe7 !important;
+}
+
+/* 🌟 Sidebar Dropdown & Labels */
+.stSelectbox>div>div {
+    background-color: #111 !important;
+    color: #00ffe7 !important;
+    border: 1px solid #00ffe7 !important;
+    border-radius: 0px;
+}
+.stSelectbox label {
+    color: #00ffe7 !important;
+    font-weight: 500;
+}
+
+/* Sidebar Button Toggle */
+[data-testid="collapsedControl"] button {
+    color: #00ffe7 !important;
+    border: 1px solid #00ffe7 !important;
+    background-color: rgba(255, 255, 255, 0.4) !important;
+}
+[data-testid="collapsedControl"] button:hover {
+    background-color: #00ffe7 !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+/* 🌈 Titles & Headings */
+h1, h2, h3 {
+    color: #00ffe7 !important;
+    text-shadow: 0 0 15px #00ffe7;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+h1 {
+    font-size: 2rem !important;
+    margin-top: 2rem;
+}
+h2 {
+    text-align: center;
+    font-size: 1.4rem !important;
+}
+p {
+    font-size: 1rem !important;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+/* ✨ Buttons */
+.stButton>button {
+    background-color: transparent !important;
+    color: #00ffe7 !important;
+    border: 2px solid #00ffe7 !important;
+    border-radius: 0px !important;
+    padding: 17px 120px !important;
+    font-weight: 600 !important;
+    transition: 0.3s;
+    align-items: center;
+    color: white;
+    margin-left: 116px;
+    
+}
+.stButton>button:hover {
+    background-color: #1ab0a1 !important;
+    color: #000000 !important;
+    box-shadow: 0 0 20px #26a397;
+}
+
+/* 🧊 Cards */
+[data-testid="stVerticalBlock"] div[data-testid="stHorizontalBlock"] > div {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 255, 231, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 255, 231, 0.1);
+    padding: 18px;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+[data-testid="stVerticalBlock"] div[data-testid="stHorizontalBlock"] > div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 231, 0.3);
+}
+
+/* 🧠 Input Fields */
+textarea, input {
+    background-color: #111 !important;
+    color: #00ffe7 !important;
+    border: 1px solid #00ffe7 !important;
+    border-radius: 0px !important;
+}
+
+/* 🎧 iFrame Styling (Spotify etc.) */
+iframe {
+    border: 2px solid #00ffe7;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 20px rgba(0, 255, 231, 0.3);
+}
+
+/* Footer / Bottom Padding */
+footer { display: none; }
+.block-container {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+/* 🌟 Neon Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00ffe7, #00b3ff);
+    border-radius: 0px;
+}
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.st-emotion-cache-139jccg {
+    width: calc(58% - 1rem);
+    flex: 1 1 calc(42% - 1rem);
+}
+
+[data-testid="stVerticalBlock"] div[data-testid="stHorizontalBlock"] > div {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 255, 231, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 231, 0.1);
+    padding: 37px;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}

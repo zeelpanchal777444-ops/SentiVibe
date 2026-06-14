@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentivibe - AI Emotion Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: url('moonlight-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav select, .deploy-btn {
+      padding: 8px 12px;
+      border-radius: 5px;
+      border: none;
+      background-color: #ffffff22;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 60px;
+    }
+
+    .welcome {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      font-size: 1.1rem;
+    }
+
+    .stat {
+      background-color: #ffffff22;
+      padding: 15px 25px;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🎧 Sentivibe</div>
+    <div class="nav">
+      <select>
+        <option>Spotify Mood Player</option>
+        <option>Calm Vibes</option>
+        <option>Energetic Beats</option>
+      </select>
+      <button class="deploy-btn">Deploy</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>🎧 Sentivibe - AI Emotion Assistant</h1>
+    <div class="welcome">Welcome to Sentivibe 😊<br>Analyzing your mood... Stay positive 💖</div>
+
+    <div class="stats">
+      <div class="stat">😊 Moods Analyzed: 120+</div>
+      <div class="stat">🎵 Songs Suggested: 250+</div>
+      <div class="stat">💬 Messages Created: 300+</div>
+    </div>
+  </main>
+</body>
+</html>
+<script>
+  async function fetchMoodData() {
+    try {
+      const response = await fetch('/api/mood');
+      const data = await response.json();
+
+      // Update mood message
+      document.querySelector('.welcome').innerHTML = `
+        <strong>${data.mood} 😊</strong><br>${data.message}
+      `;
+
+      // Update stats
+      document.querySelectorAll('.stat')[0].textContent = `😊 Moods Analyzed: ${data.moodsAnalyzed}+`;
+      document.querySelectorAll('.stat')[1].textContent = `🎵 Songs Suggested: ${data.songsSuggested}+`;
+      document.querySelectorAll('.stat')[2].textContent = `💬 Messages Created: ${data.messagesCreated}+`;
+    } catch (error) {
+      console.error("Mood fetch failed:", error);
+      document.querySelector('.welcome').innerHTML = `
+        <strong>😕 Mood Unknown</strong><br>Unable to analyze mood. Try again later.
+      `;
+    }
+  }
+
+  window.onload = () => {
+    fetchMoodData();
+  };
+</script>
